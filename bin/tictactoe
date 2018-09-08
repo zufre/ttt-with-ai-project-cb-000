@@ -15,7 +15,7 @@ Enter the number of players [0, 1, 2]:"
   if input == 1
     puts "Do you want to go first?[y/n]:"
     player_input = gets.strip
-    until input == "y"|| input == "n" do
+    until player_input == "y"|| player_input == "n" do
       puts "o you want to go first?[y/n]:"
      player_input = gets.strip
     end
