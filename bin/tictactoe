@@ -10,7 +10,7 @@ require_relative '../config/environment'
   end
 
 
-  if input == 1
+  if input == "1"
 
     until player_input == "y"|| player_input == "n" do
       puts "o you want to go first?[y/n]:"
@@ -18,13 +18,13 @@ require_relative '../config/environment'
     end
   end
 
-  if input == 0
+  if input == "0"
     game = Game.new(Players::Computer.new("X"),Players::Computer.new("O"), board = Board.new)
-  elsif input == 1 && player_input == "y"
+  elsif input == "1" && player_input == "y"
     game = Game.new(Players::Human.new("X"),Players::Computer.new("O"), board = Board.new)
-  elsif input == 1 && player_input == "n"
+  elsif input == "1" && player_input == "n"
     game = Game.new(Players::Computer.new("X"),Players::Human.new("O"), board = Board.new)
-  elsif input == 2
+  elsif input == "2"
     game = Game.new(Players::Human.new("X"),Players::Human.new("O"), board = Board.new)
   else
     puts "Input not valid"
