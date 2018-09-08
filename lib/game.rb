@@ -13,6 +13,7 @@ class Game
   def current_player
      @board.turn_count.even? ? player_1 : player_2
   end
+
   def won?
     WIN_COMBINATIONS.any? do |combo|
       if  @board.position(combo[0]+1) != " " && @board.position(combo[0]+1) == @board.position(combo[1]+1) && @board.position(combo[1]+1) == @board.position(combo[2]+1)
@@ -42,14 +43,24 @@ class Game
     self.current_player
   end
   def play
+    @board.display
     until self.over? do
       self.turn
     end
-
     if self.won?
       puts "Congratulations #{self.winner}!"
     else
       puts ("Cat's Game!")
     end
+    puts "Play again?[y/n]"
+    input = gets.strip
+    if input == "y"
+      @board.reset!
+      self.play
+    else
+      puts "Thanks for playing!"
+
+    end
+
   end
 end
