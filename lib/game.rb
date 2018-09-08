@@ -42,6 +42,7 @@ class Game
     self.current_player
   end
   def play
+    @board.display
     until self.over? do
       self.turn
     end
