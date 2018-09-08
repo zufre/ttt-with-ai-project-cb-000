@@ -11,10 +11,10 @@ require_relative '../config/environment'
 
 
   if input == "1"
-
-    until player_input == "y"|| player_input == "n" do
-      puts "o you want to go first?[y/n]:"
-     player_input = gets.strip
+    loop do 
+      puts "Do you want to go first?[y/n]:"
+      player_input = gets.strip
+      break if player_input == "y"|| player_input == "n"  
     end
   end
 
