@@ -11,8 +11,9 @@ Enter the number of players [0, 1, 2]:"
     game = Game.new(Players::Computer.new("X"),Players::Computer.new("O"), board = Board.new)
   elsif input == 1
     game = Game.new(Players::Human.new("X"),Players::Computer.new("O"), board = Board.new)
-  elsif input == 2
+  else
     game = Game.new(Players::Human.new("X"),Players::Human.new("O"), board = Board.new)
   end
+
 
   game.play
