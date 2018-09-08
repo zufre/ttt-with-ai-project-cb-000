@@ -2,11 +2,11 @@
 
 require_relative '../config/environment'
 
-  
-  do
+
+  loop do 
     puts "Would you like to play another human or the computer?\nEnter the number of players [0, 1, 2]:"
     input = gets.strip.to_i
-    until input == 1 || input == 2 || input == 0 
+    break if input == 1 || input == 2 || input == 0 
   end
 
 
