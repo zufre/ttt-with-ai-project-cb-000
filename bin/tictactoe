@@ -6,14 +6,24 @@ puts "Would you like to play another human or the computer?
 Enter the number of players [0, 1, 2]:"
 
   input = gets.strip.to_i
+  if input == 1
+    puts "Do you want to go first?[y/n]"
+    player_input = gets.strip
+  end
 
   if input == 0
     game = Game.new(Players::Computer.new("X"),Players::Computer.new("O"), board = Board.new)
-  elsif input == 1
+  elsif input == 1 && player_input == "y"
     game = Game.new(Players::Human.new("X"),Players::Computer.new("O"), board = Board.new)
-  else
+  elsif input == 1 && player_input == "n"
+    game = Game.new(Players::Computer.new("X"),Players::Human.new("O"), board = Board.new)
+  elsif input == 2
     game = Game.new(Players::Human.new("X"),Players::Human.new("O"), board = Board.new)
+  else
+    puts "Input not valid"
+    
   end
+
 
 
   game.play
