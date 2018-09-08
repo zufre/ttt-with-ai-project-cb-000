@@ -3,6 +3,7 @@
 require_relative '../config/environment'
 
 input = ""
+player_input = ""
   loop do
     puts "Would you like to play another human or the computer?\nEnter the number of players [0, 1, 2]:"
     input = gets.strip
