@@ -8,11 +8,11 @@ Enter the number of players [0, 1, 2]:"
   input = gets.strip.to_i
   until input == 1 || input ==2 || input == 0 do
     puts "Would you like to play another human or the computer?
-   Enter the number of players [0, 1, 2]:"
+    Enter the number of players [0, 1, 2]:"
    input = gets.strip.to_i
   end
-    
-  
+
+
   if input == 1
     puts "Do you want to go first?[y/n]"
     player_input = gets.strip
@@ -28,7 +28,7 @@ Enter the number of players [0, 1, 2]:"
     game = Game.new(Players::Human.new("X"),Players::Human.new("O"), board = Board.new)
   else
     puts "Input not valid"
-    
+
   end
 
 
