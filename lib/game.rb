@@ -50,7 +50,7 @@ class Game
     if self.won?
       puts "Congratulations #{self.winner}!"
     else
-      puts ("Cat's Game!")
+      puts "Cat's Game!"
     end
     puts "Play again?[y/n]"
     input = gets.strip
